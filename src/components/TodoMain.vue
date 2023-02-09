@@ -4,7 +4,7 @@
         <main>
             <div class="todos">
                 <div class="write">
-                    <input type="text" v-model="addItemText" />
+                    <input @keypress.enter="addItem" type="text" v-model="addItemText" />
                     <button @click="addItem" class="btn add">Add</button>
                 </div>
                 <ul class="list">
