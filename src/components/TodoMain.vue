@@ -4,7 +4,7 @@
         <main>
             <div class="todos">
                 <div class="write">
-                    <input @keypress.enter="addItem" type="text" v-model="addItemText" />
+                    <input ref="writeArea" @keypress.enter="addItem" type="text" v-model="addItemText" />
                     <button @click="addItem" class="btn add">Add</button>
                 </div>
                 <ul class="list">
@@ -46,6 +46,9 @@ export default {
                 this.addItemText = "";
             }
         },
+    },
+    mounted() {
+        this.$refs.writeArea.focus();
     },
 };
 </script>
