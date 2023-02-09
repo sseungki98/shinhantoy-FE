@@ -8,7 +8,7 @@
                     <button @click="addItem" class="btn add">Add</button>
                 </div>
                 <ul class="list">
-                    <li v-for="todo in todos" :key="todo.text">
+                    <li v-for="(todo, i) in todos" :key="i">
                         <i class="fa-check-square" :class="todo.state === 'yet' ? 'far' : 'fas'"></i>
                         <span>
                             {{ todo.text }}
