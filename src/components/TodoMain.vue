@@ -38,11 +38,13 @@ export default {
     },
     methods: {
         addItem() {
-            this.todos.push({
-                text: this.addItemText,
-                state: "yet",
-            });
-            this.addItemText = "";
+            if (this.addItemText) {
+                this.todos.push({
+                    text: this.addItemText,
+                    state: "yet",
+                });
+                this.addItemText = "";
+            }
         },
     },
 };
