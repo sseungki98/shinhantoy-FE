@@ -81,6 +81,7 @@ h1 {
 .todos {
     font-size: 1.2rem;
     margin: 20px 0 0;
+    position: relative;
 }
 .todos .write {
     display: inline-block;
@@ -88,6 +89,7 @@ h1 {
     padding: 10px 15px;
     border-radius: 30px;
     margin-left: -20px;
+    position: absolute;
 }
 .todos .write > input {
     font-size: 24px;
@@ -100,6 +102,11 @@ h1 {
     margin-right: -2px;
     vertical-align: middle;
 }
+
+.todos ul {
+    padding-top: 70px;
+}
+
 .todos ul > li {
     margin: 10px 0;
 }
@@ -124,5 +131,21 @@ h1 {
     margin: 0 4px;
     color: #877457;
     text-decoration: underline;
+}
+
+/* animation */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.todos .write.edit {
+    border: 3px solid #2ca661;
+}
+.todos ul > li.editing span {
+    color: #abe0c2;
 }
 </style>
