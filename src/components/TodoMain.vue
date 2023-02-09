@@ -9,7 +9,7 @@
                 </div>
                 <ul class="list">
                     <li v-for="(todo, i) in todos" :key="i">
-                        <i class="fa-check-square" :class="todo.state === 'yet' ? 'far' : 'fas'"></i>
+                        <i @click="checkItem(i)" class="fa-check-square" :class="todo.state === 'yet' ? 'far' : 'fas'"></i>
                         <span>
                             {{ todo.text }}
                             <b>
@@ -44,6 +44,14 @@ export default {
                     state: "yet",
                 });
                 this.addItemText = "";
+            }
+        },
+
+        checkItem(index) {
+            if (this.todos[index].state === "yet") {
+                this.todos[index].state = "done";
+            } else {
+                this.todos[index].state = "yet";
             }
         },
     },
